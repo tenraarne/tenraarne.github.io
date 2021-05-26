@@ -9,6 +9,8 @@
             --padding_left: 15px;
             --padding_bottom: 30px;
             --new_sidebar_width: 100px;
+            --responsive_navbar_height: 370px ;
+            --reverse_responsive_navbar_height: -370px;
         }
 
 *{
@@ -135,6 +137,8 @@ body{
     width: calc(100% - var(--sidebar_width));
     left : var(--sidebar_width);
     //margin: 12px;
+
+
 }
 
 .pin_container {
@@ -239,27 +243,29 @@ img {
 
 
     .responsive_navbar{
-        display: inline-block;
+        display: block;
         background-color:purple;
         top: 0;
         width: 100%;
-        height:54vh;
+        height:var(--responsive_navbar_height);
         padding:28px 0;
         transform: translateY(-100%);
         transition: all .4s ease;
+        //overflow: hidden;
+
     }
     .home_content{
-        transform: translateY(-54vh);
+        transform: translateY(var(--reverse_responsive_navbar_height));
         transition: all .4s ease;
     }
     .sidebar{
-        transform: translateY(-54vh);
+        transform: translateY(var(--reverse_responsive_navbar_height));
         transition: all .4s ease;
     }
 
 
     .responsive_navbar_elements {
-
+        //opacity: 0;
 
     }
 
@@ -275,11 +281,12 @@ img {
 
     .responsive_navbar_element_link {
         text-decoration: none;
-        color: white;
+        color: black;
     }
 
 
     .responsive_navbar_active{
+
         transform: translateY(0%);
         transition: all .4s ease;
     }
@@ -311,4 +318,9 @@ img {
     .pin_container{
         grid-template-columns: repeat(1, 300px);
     }
+}
+
+
+@media only screen and (max-height: 645px){
+
 }
