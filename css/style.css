@@ -21,6 +21,7 @@
 
 
 
+
 body{
     position: relative;
     min-height: 100vh;
@@ -195,6 +196,11 @@ img {
     display: none;
 }
 
+.resultsize {
+    color: white;
+    background-color: deeppink;
+
+}
 
 @media only screen and (max-width: 800px) {
     .sidebar {
@@ -304,6 +310,7 @@ img {
 
 
 }
+
 
 
 

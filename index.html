@@ -14,7 +14,7 @@
     <link rel="stylesheet" type="text/css" href="./css/style.css">
 
 </head>
-<body>
+<body  onresize="displaySize()" >
 <div class="responsive_navbar">
     <ul class="responsive_navbar_elements">
         <li class="responsive_navbar_element">
@@ -49,6 +49,12 @@
             </a>
         </div>
 
+
+    </div>
+
+    <div class="resultsize">
+        Result Size:
+        <p id="result"></p>
     </div>
     <div class="nav">
         <div class="top_nav" data-content-field="navigation">

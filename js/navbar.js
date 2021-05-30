@@ -10,4 +10,14 @@ const navSlide = () => {
     });
 }
 
+function displaySize(){
+    var res = window.innerWidth + "x" + window.innerHeight;
+    document.getElementById("result").innerHTML = res;
+
+}
+
+
+displaySize();
 navSlide();
+
+
