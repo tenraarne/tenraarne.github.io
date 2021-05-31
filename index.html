@@ -143,92 +143,82 @@
 
 
 <div class="home_content">
-    <div class="pin_container">
-    <div class="card card_small">
-        <img src="./img/1.jpg">
-    </div>
-        <div class="card card_medium">
-            <img src="./img/mir.jpeg">
-        </div>
-        <div class="card card_large">
-            <img src="./img/mir1.jpeg">
-        </div>
-        <div class="card card_medium">
-            <img src="./img/2.jpg">
-        </div>
-        <div class="card card_small">
-            <img src="./img/3.jpg">
-        </div>
-        <div class="card card_large">
-            <img src="./img/4.png">
-        </div>
-        <div class="card card_medium">
-            <img src="./img/5.png">
-        </div>
-        <div class="card card_small">
-            <img src="./img/6.png">
-        </div>
-        <div class="card card_medium">
-             <img src="./img/7.jpg">
-        </div>
-        <div class="card card_small">
-            <img src="./img/8.jpg">
-        </div>
-        <div class="card card_medium">
-            <img src="./img/9.jpg">
-        </div>
-        <div class="card card_large">
-            <img src="./img/10.jpg">
-        </div>
-        <div class="card card_medium">
-             <img src="./img/mir2.jpeg">
-        </div>
-        <div class="card card_small">
 
-        </div>
-        <div class="card card_medium"></div>
-        <div class="card card_large">
+    <div class="grid">
 
-        </div>
-        <div class="card card_small"></div>
-        <div class="card card_medium"></div>
-        <div class="card card_small"></div>
-        <div class="card card_medium"></div>
-        <div class="card card_large"></div>
-        <div class="card card_medium"></div>
-        <div class="card card_small"></div>
-        <div class="card card_medium"></div>
-        <div class="card card_large"></div>
-        <div class="card card_small"></div>
-        <div class="card card_medium"></div>
-        <div class="card card_small"></div>
-        <div class="card card_medium"></div>
-        <div class="card card_large"></div>
-        <div class="card card_medium"></div>
-        <div class="card card_small"></div>
-        <div class="card card_medium"></div>
-        <div class="card card_large"></div>
-        <div class="card card_small"></div>
-        <div class="card card_medium"></div>
-        <div class="card card_small"></div>
-        <div class="card card_medium"></div>
-        <div class="card card_large"></div>
-        <div class="card card_medium"></div>
-        <div class="card card_small"></div>
-        <div class="card card_medium"></div>
-        <div class="card card_large"></div>
-        <div class="card card_small"></div>
-        <div class="card card_medium"></div>
-        <div class="card card_small"></div>
-        <div class="card card_medium"></div>
-        <div class="card card_large"></div>
-        <div class="card card_medium"></div>
-        <div class="card card_small"></div>
-        <div class="card card_medium"></div>
-        <div class="card card_large"></div>
+          <div class="grid-item">
+                <img src="./img/1.jpg" alt="image">
+          </div>
+        <div class="grid-item">
+                <img src="./img/mir.jpeg" alt="image">
+          </div>
+        <div class="grid-item">
+                <img src="./img/mir1.jpeg" alt="image">
+          </div>
+        <div class="grid-item">
+                <img src="./img/2.jpg" alt="image">
+          </div>
+        <div class="grid-item">
+                <img src="./img/3.jpg" alt="image">
+          </div>
+        <div class="grid-item">
+                <img src="./img/4.png" alt="image">
+          </div>
+        <div class="grid-item">
+                <img src="./img/5.png" alt="image">
+          </div>
+        <div class="grid-item">
+                <img src="./img/4.png" alt="image">
+          </div>
+        <div class="grid-item">
+                <img src="./img/2.jpg" alt="image">
+          </div>
 
-    </div>
+        <div class="grid-item">
+                <img src="./img/mir.jpeg" alt="image">
+          </div>
+
+        <div class="grid-item">
+                <img src="./img/4.png" alt="image">
+          </div>
+        <div class="grid-item">
+                <img src="./img/mir1.jpeg" alt="image">
+          </div>
+        <div class="grid-item">
+                <img src="./img/2.jpg" alt="image">
+          </div>
+        <div class="grid-item">
+                <img src="./img/5.png" alt="image">
+          </div>
+        <div class="grid-item">
+                <img src="./img/5.png" alt="image">
+          </div>
+        <div class="grid-item">
+                <img src="./img/5.png" alt="image">
+          </div>
+        <div class="grid-item">
+                <img src="./img/5.png" alt="image">
+          </div>
+        <div class="grid-item">
+                <img src="./img/5.png" alt="image">
+          </div>
+
 
 </div>
+
+
+
+
+</div>
+    <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+    <script>
+        var elem = document.querySelector('.grid');
+        var msnry = new Masonry( elem, {
+          // options
+          itemSelector: '.grid-item',
+            percentPosition: true,
+
+    });
+    </script>
     <script src="./js/navbar.js"></script>
 </body>

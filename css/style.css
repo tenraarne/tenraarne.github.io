@@ -27,6 +27,7 @@ body{
     min-height: 100vh;
     width: 100%;
     //overflow: hidden;
+    overflow-x: hidden;
 }
 
 .sidebar{
@@ -136,57 +137,11 @@ body{
     position: absolute;
     height: 100%;
     width: calc(100% - var(--sidebar_width));
-    left : var(--sidebar_width);
-    //margin: 12px;
-
-
-}
-
-.pin_container {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-
-    display: grid;
-    grid-template-columns: repeat(auto-fill, var(--card_width));
-    grid-auto-rows: var(--row_increment);
-    justify-content: center;
-}
-
-.card {
-            padding: 0;
-            margin: 5px;
-            border-radius: var(--card_border_radius);
-            background-color: red;
-            align-items: center;
-
-        }
-
-        .card_small {
-            grid-row-end: span var(--card_small);
-            align-items: center;
-        }
-
-        .card_medium {
-            grid-row-end: span var(--card_medium);
-        }
-
-        .card_large {
-            grid-row-end: span var(--card_large);
-        }
-
-img {
-
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: var(--card_border_radius);
-    object-position: center;
+    left : calc(var(--sidebar_width));
+    margin: 10px;
 
 }
+
 
 .menu {
     display: none;
@@ -202,6 +157,67 @@ img {
 
 }
 
+img {
+
+    width: 100%;
+    height: 100%;
+
+}
+.grid{
+    position: relative;
+    width: 100%;
+    //margin-left: 10px;
+    //margin-top: 10px;
+    //margin: 10px;
+    justify-content: center;
+
+
+    //text-align: center;
+
+
+
+}
+
+.grid-item{
+    width: 32.2%;
+    //margin: 5px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    align-items: center;
+}
+@media only screen and (min-width: 1920px){
+    .grid-item{width: 24%;}
+
+}
+@media only screen and (min-width: 2304px){
+    .grid-item{width: 19%;}
+
+}
+@media only screen and (min-width: 3072px){
+    .grid-item{width: 13.9%;}
+
+}
+@media only screen and (min-width: 4608px){
+    .grid-item{width: 8.8%;}
+
+}
+@media only screen and (min-width: 6144px){
+    .grid-item{width: 6.9%;}
+
+}
+
+
+
+
+
+
+
+@media only screen and (max-width: 1235px){
+    .grid-item{
+        width: 48%;
+    }
+
+}
 @media only screen and (max-width: 800px) {
     .sidebar {
         position: relative;
@@ -232,7 +248,8 @@ img {
     left: 0;
     width: 100%;
     height: calc(100% - var(--new_sidebar_width));
-    top : calc(var(--new_sidebar_width) + 400px);
+    top : calc(var(--new_sidebar_width) + 380px);
+    //background-color: red;
     //margin: 12px;
 }
     .pic_content{
@@ -310,24 +327,17 @@ img {
 
 
 }
-
-
-
-
-@media only screen and (max-width: 487px){
-    .pin_container{
-        grid-template-columns: repeat(1, 400px);
+@media only screen and (max-width: 793px){
+    body{
+        overflow-x:hidden;
     }
-}
+    .grid{
+        //justify-content: center;
+        //display: flex;
 
-
-@media only screen and (max-width: 395px){
-    .pin_container{
-        grid-template-columns: repeat(1, 300px);
     }
-}
 
-
-@media only screen and (max-height: 645px){
-
+    .grid-item{
+        width: 97%; //97
+    }
 }
