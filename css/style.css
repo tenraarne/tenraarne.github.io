@@ -8,6 +8,7 @@
             --sidebar_width : 150px;
             --padding_left: 15px;
             --padding_bottom: 30px;
+            --animated-navbar-bacground-color: #660a0a;
         }
 
 *{
@@ -25,6 +26,7 @@ body{
     min-height: 100vh;
     width: 100%;
     //overflow: hidden;
+    overflow-x:hidden;
 }
 
 .sidebar{
@@ -164,9 +166,12 @@ body{
  .mobile_bar{
      display:none;
  }
- .pic_info{
+ .pic_content{
      display:none;
  }
+.pic_info_mobile{
+    display:none;
+}
  .mobile_navbar_div{
      //background-color:yellow;
 
@@ -186,11 +191,15 @@ body{
          height:100px;
          width:100%;
          display: block;
-         background-color:purple;
+         background-color:#11101d;
          margin-bottom:10px;
 
          //justify-content: space-around;
 
+     }
+     .grid-item{
+         padding-left: 20px;
+         padding-right: 20px;
      }
      .mobile_bar_content{
          width:100%;
@@ -201,10 +210,11 @@ body{
          align-items: center;
 
 
+
      }
      .mobile_logo{
+            padding: 20px 20px 20px 20px;
             font-size: 28px;
-            width: 100%;
 
      }
      .mobile_logo_text{
@@ -241,24 +251,24 @@ body{
          //animation-direction:reverse;
     }
      @keyframes reverse{
-         0% {height:300px;background-color:rebeccapurple;}
+         0% {height:350px;background-color:var( --animated-navbar-bacground-color);}
 
-         100% {height:0;background-color:rebeccapurple;}
+         100% {height:0;background-color:var( --animated-navbar-bacground-color);}
      }
 
 
-      .pic_info{
+      .pic_info_mobile{
      display:block;
  }
      .menu{
-         position:relative;
          display:block;
-        color:red;
+        color: #a5828e; //#660A0B
         justify-content:center;
-        //margin-top: 30px;
+
+         padding: 20px 20px 20px 20px;
         cursor: pointer;
-         float:left;
-         //left:80%;
+
+
 
      }
      .menu:hover{
@@ -271,7 +281,7 @@ body{
      .mobile_navbar_active{
 
          display:block;
-         background-color:rebeccapurple;
+         background-color:var(--animated-navbar-bacground-color);
          animation-name: example;
          animation-duration:.3s;
          transition: ease;
@@ -292,19 +302,22 @@ body{
 
      }
      .mobile_navbar_element{
+         font-size:20px;
          width:100%;
      }
-     .mobile_navbar_element:hover{
-        font-weight:bold;
-     }
+
      .nav_element{
-         font-size:15px;
+        width:100%;
+        opacity:.8;
          line-height:50px;
          color:white;
      }
+     .nav_element:hover{
+         opacity:1;
+     }
      @keyframes example{
          0% {height:0}
-         100% {height:300px}
+         100% {height:350px}
      }
 
 
