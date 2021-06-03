@@ -8,10 +8,6 @@
             --sidebar_width : 150px;
             --padding_left: 15px;
             --padding_bottom: 30px;
-            --new_sidebar_width: 100px;
-            --responsive_navbar_height: 370px ;
-            --reverse_responsive_navbar_height: -370px;
-            --animated-navbar-bacground-color: #660a0a;
         }
 
 *{
@@ -20,8 +16,7 @@
     scroll-behavior: smooth;
 }
 
-
-a {
+a{
     text-decoration: none;
 }
 
@@ -30,7 +25,6 @@ body{
     min-height: 100vh;
     width: 100%;
     //overflow: hidden;
-    overflow-x: hidden;
 }
 
 .sidebar{
@@ -95,6 +89,7 @@ body{
     transform: rotate(-180deg);
 
 }
+
 .sub_nav ul li {
     height: 27px;
 }
@@ -139,122 +134,62 @@ body{
     padding-bottom: var(--padding_bottom);
 }
 
+
+
 .home_content{
     position: absolute;
     height: 100%;
     width: calc(100% - var(--sidebar_width));
-    left : calc(var(--sidebar_width));
-    //margin: 10px;
-    //margin-left:5px;
-    //margin-top:10px;
+    left : var(--sidebar_width);
+    //margin: 12px;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
 
 }
-
-
-.menu {
-    display: none;
+#macy {
+    opacity: 0;
+    transition: all 0.5s;
 }
 
-
-
-.resultsize {
-    color: white;
-    background-color: deeppink;
+.show {
+    opacity: 1!important;
 
 }
-
-img {
-
-    width: 100%;
-    height: 100%;
-
-}
-.grid{
-    position: relative;
-
-    margin-left: 12px;
-    margin-top: 10px;
-    //margin: 10px;
-
-
-
-    //text-align: center;
-
-
-
-}
-
-.grid-item{
-    width: 32.2%;
-    //margin: 5px;
-    margin-bottom: 10px;
-    margin-right: 10px;
-    align-items: center;
-}
+ img{
+     width: 100%;
+     height: auto;
+     display: block;
+ }
  .mobile_bar{
      display:none;
  }
- .mobile_navbar{
+ .pic_info{
      display:none;
  }
-  .mobile_navbar_div{
+ .mobile_navbar_div{
      //background-color:yellow;
 
      height: 0;
      //width: 0;
 
  }
-  .pic_info{
-      display:none;
-  }
-  .pic_content{
-      display:none;
-  }
-@media only screen and (min-width: 1920px){
-    .grid-item{width: 24%;}
+ .mobile_navbar{
+     display:none;
+ }
 
-}
-@media only screen and (min-width: 2304px){
-    .grid-item{width: 19%;}
-
-}
-@media only screen and (min-width: 3072px){
-    .grid-item{width: 13.9%;}
-
-}
-@media only screen and (min-width: 4608px){
-    .grid-item{width: 8.8%;}
-
-}
-@media only screen and (min-width: 6144px){
-    .grid-item{width: 6.9%;}
-
-}
-
-
-
-
-
-
-
-@media only screen and (max-width: 1235px){
-    .grid-item{
-        width: 48%;
-    }
-
-}
-@media only screen and (max-width: 800px) {
+ @media only screen and (max-width: 800px) {
      .sidebar {
          display: none;
      }
      .mobile_bar {
          height:100px;
          width:100%;
-         display: flex;
-         background-color:#11101d;
+         display: block;
+         background-color:purple;
          margin-bottom:10px;
-         justify-content: space-around;
 
+         //justify-content: space-around;
 
      }
      .mobile_bar_content{
@@ -267,20 +202,25 @@ img {
 
 
      }
-          .mobile_logo{
-              padding: 20px 20px 20px 20px;
+     .mobile_logo{
             font-size: 28px;
-            //width: 100%;
+            width: 100%;
 
      }
-    .mobile_logo_text{
+     .mobile_logo_text{
          color: white;
      }
-
-    .home_content{
+     .home_content{
          all:unset;
      }
-    .mobile_navbar{
+
+     .mobile_content{
+
+        //width:100%;
+
+        //padding: 10px 10px 10px 10px;
+    }
+     .mobile_navbar{
          display: none;
      }
      .mobile_navbar_items_active{
@@ -292,7 +232,7 @@ img {
          //display: none;
          //visibility:hidden;
          //top:-100px;
-         //width:100%;
+         width:100%;
          //height: 0;
          //text-align: center;
          //background-color:yellow;
@@ -300,37 +240,45 @@ img {
          animation-duration:.3s;
          //animation-direction:reverse;
     }
-    .menu {
-        display:block;
-        color: #a5828e; //#660A0B
-        justify-content:center;
-        padding: 20px 20px 20px 20px;
-        cursor: pointer;
-
-    }
-    .menu:hover{
-         font-weight:bold;
-     }
      @keyframes reverse{
-         0% {height:300px;background-color: var( --animated-navbar-bacground-color);}
+         0% {height:300px;background-color:rebeccapurple;}
 
-         100% {height:0;background-color:var( --animated-navbar-bacground-color);}
+         100% {height:0;background-color:rebeccapurple;}
      }
+
+
       .pic_info{
      display:block;
  }
+     .menu{
+         position:relative;
+         display:block;
+        color:red;
+        justify-content:center;
+        //margin-top: 30px;
+        cursor: pointer;
+         float:left;
+         //left:80%;
+
+     }
+     .menu:hover{
+         font-weight:bold;
+     }
+
+
 
 
      .mobile_navbar_active{
 
          display:block;
-         background-color:var( --animated-navbar-bacground-color);
+         background-color:rebeccapurple;
          animation-name: example;
          animation-duration:.3s;
          transition: ease;
          width:100%;
          height:350px;
          text-align: center;
+
 
          //transform: translateY(100px);
 
@@ -344,21 +292,15 @@ img {
 
      }
      .mobile_navbar_element{
-
-         font-size:20px;
          width:100%;
-
-
      }
-
+     .mobile_navbar_element:hover{
+        font-weight:bold;
+     }
      .nav_element{
-         width:100%;
-        opacity:.8;
+         font-size:15px;
          line-height:50px;
          color:white;
-     }
-     .nav_element:hover{
-         opacity:1;
      }
      @keyframes example{
          0% {height:0}
@@ -366,42 +308,7 @@ img {
      }
 
 
+ }
 
 
 
-}
-@media only screen and (max-width: 793px){
-    body{
-        overflow-x:hidden;
-        //overflow-y: hidden;
-    }
-    .grid{
-        //justify-content: center;
-        //display: flex;
-            width: 90%;
-            left:20px;
-            padding-left: 10px;
-
-    }
-
-    .grid-item{
-        width: 97%; //97
-    }
-
-}
-
-@media only screen and (max-width: 414px) {
-    .grid {
-        left: 8px;
-
-
-    }
-}
-
-    @media only screen and (max-width: 248px) {
-        .grid {
-            left: 0px;
-
-
-        }
-    }
