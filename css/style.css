@@ -11,6 +11,7 @@
             --new_sidebar_width: 100px;
             --responsive_navbar_height: 370px ;
             --reverse_responsive_navbar_height: -370px;
+            --animated-navbar-bacground-color: #660a0a;
         }
 
 *{
@@ -20,7 +21,9 @@
 }
 
 
-
+a {
+    text-decoration: none;
+}
 
 body{
     position: relative;
@@ -88,7 +91,10 @@ body{
     transform: rotate(-180deg);
     text-align: end;
 }
+.nav_element_reverse_mobile{
+    transform: rotate(-180deg);
 
+}
 .sub_nav ul li {
     height: 27px;
 }
@@ -138,7 +144,9 @@ body{
     height: 100%;
     width: calc(100% - var(--sidebar_width));
     left : calc(var(--sidebar_width));
-    margin: 10px;
+    //margin: 10px;
+    //margin-left:5px;
+    //margin-top:10px;
 
 }
 
@@ -147,9 +155,7 @@ body{
     display: none;
 }
 
-.responsive_navbar{
-    display: none;
-}
+
 
 .resultsize {
     color: white;
@@ -165,11 +171,11 @@ img {
 }
 .grid{
     position: relative;
-    width: 100%;
-    //margin-left: 10px;
-    //margin-top: 10px;
+
+    margin-left: 12px;
+    margin-top: 10px;
     //margin: 10px;
-    justify-content: center;
+
 
 
     //text-align: center;
@@ -185,6 +191,25 @@ img {
     margin-right: 10px;
     align-items: center;
 }
+ .mobile_bar{
+     display:none;
+ }
+ .mobile_navbar{
+     display:none;
+ }
+  .mobile_navbar_div{
+     //background-color:yellow;
+
+     height: 0;
+     //width: 0;
+
+ }
+  .pic_info{
+      display:none;
+  }
+  .pic_content{
+      display:none;
+  }
 @media only screen and (min-width: 1920px){
     .grid-item{width: 24%;}
 
@@ -219,110 +244,128 @@ img {
 
 }
 @media only screen and (max-width: 800px) {
-    .sidebar {
-        position: relative;
-        top:0;
-        width: 100%;
-        height: var(--new_sidebar_width);
-        display: flex;
-        z-index: 99;
-        justify-content: space-around;
-
-
-    }
-
-    .top_nav{
+     .sidebar {
          display: none;
-    }
-    .sub_nav{
-       // margin-top:60px;
-        display: none;
-    }
+     }
+     .mobile_bar {
+         height:100px;
+         width:100%;
+         display: flex;
+         background-color:#11101d;
+         margin-bottom:10px;
+         justify-content: space-around;
 
 
-    .nav_element{
-        font-size: 18px;
-    }
+     }
+     .mobile_bar_content{
+         width:100%;
+         height: 100%;
+         padding: 10px 10px 10px 10px;
+         display: flex;
+         justify-content: space-between;
+         align-items: center;
+
+
+     }
+          .mobile_logo{
+              padding: 20px 20px 20px 20px;
+            font-size: 28px;
+            //width: 100%;
+
+     }
+    .mobile_logo_text{
+         color: white;
+     }
+
     .home_content{
-    position: absolute;
-    left: 0;
-    width: 100%;
-    height: calc(100% - var(--new_sidebar_width));
-    top : calc(var(--new_sidebar_width) + 380px);
-    //background-color: red;
-    //margin: 12px;
-}
-    .pic_content{
-        display:none;
+         all:unset;
+     }
+    .mobile_navbar{
+         display: none;
+     }
+     .mobile_navbar_items_active{
+        display:block;
     }
+     .mobile_navbar_div{
 
+        //transform: translateY(-100%);
+         //display: none;
+         //visibility:hidden;
+         //top:-100px;
+         //width:100%;
+         //height: 0;
+         //text-align: center;
+         //background-color:yellow;
+         animation-name: reverse;
+         animation-duration:.3s;
+         //animation-direction:reverse;
+    }
     .menu {
         display:block;
-        color:red;
+        color: #a5828e; //#660A0B
         justify-content:center;
-        margin-top: 30px;
+        padding: 20px 20px 20px 20px;
         cursor: pointer;
-    }
-
-
-    .responsive_navbar{
-        display: block;
-        background-color:purple;
-        top: 0;
-        width: 100%;
-        height:var(--responsive_navbar_height);
-        padding:28px 0;
-        transform: translateY(-100%);
-        transition: all .4s ease;
-        //overflow: hidden;
 
     }
-    .home_content{
-        transform: translateY(var(--reverse_responsive_navbar_height));
-        transition: all .4s ease;
-    }
-    .sidebar{
-        transform: translateY(var(--reverse_responsive_navbar_height));
-        transition: all .4s ease;
-    }
+    .menu:hover{
+         font-weight:bold;
+     }
+     @keyframes reverse{
+         0% {height:300px;background-color: var( --animated-navbar-bacground-color);}
+
+         100% {height:0;background-color:var( --animated-navbar-bacground-color);}
+     }
+      .pic_info{
+     display:block;
+ }
 
 
-    .responsive_navbar_elements {
-        //opacity: 0;
+     .mobile_navbar_active{
 
-    }
+         display:block;
+         background-color:var( --animated-navbar-bacground-color);
+         animation-name: example;
+         animation-duration:.3s;
+         transition: ease;
+         width:100%;
+         height:350px;
+         text-align: center;
+
+         //transform: translateY(100px);
+
+     }
+     .mobile_navbar{
+         width:100%;
+         height:100%;
+         padding-top: 20px;
+         padding-bottom: 20px;
+         //line-height:20px;
+
+     }
+     .mobile_navbar_element{
+
+         font-size:20px;
+         width:100%;
 
 
-    .responsive_navbar_element {
-        display: block;
-        text-align: center;
-        padding: 3.6px;
-        cursor: pointer;
-        line-height: 3;
+     }
 
-    }
+     .nav_element{
+         width:100%;
+        opacity:.8;
+         line-height:50px;
+         color:white;
+     }
+     .nav_element:hover{
+         opacity:1;
+     }
+     @keyframes example{
+         0% {height:0}
+         100% {height:300px}
+     }
 
-    .responsive_navbar_element_link {
-        text-decoration: none;
-        color: white;
-    }
 
-
-    .responsive_navbar_active{
-
-        transform: translateY(0%);
-        transition: all .4s ease;
-    }
-
-    .home_content_active{
-        transform: translateY(0vh);
-        transition: all .4s ease;
-    }
-
-    .sidebar_active{
-        transform: translateY(0vh);
-        transition: all .4s ease;
-    }
 
 
 
@@ -330,14 +373,35 @@ img {
 @media only screen and (max-width: 793px){
     body{
         overflow-x:hidden;
+        //overflow-y: hidden;
     }
     .grid{
         //justify-content: center;
         //display: flex;
+            width: 90%;
+            left:20px;
+            padding-left: 10px;
 
     }
 
     .grid-item{
         width: 97%; //97
     }
+
 }
+
+@media only screen and (max-width: 414px) {
+    .grid {
+        left: 8px;
+
+
+    }
+}
+
+    @media only screen and (max-width: 248px) {
+        .grid {
+            left: 0px;
+
+
+        }
+    }
