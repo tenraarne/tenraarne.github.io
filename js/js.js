@@ -7,5 +7,12 @@ const navSlide = () => {
        mobile_navbar.classList.toggle('mobile_navbar_items_active');
     });
 }
+function displaySize(){
+    var res = window.innerWidth + "x" + window.innerHeight;
+    document.getElementById("result").innerHTML = res;
 
+}
+
+
+displaySize();
 navSlide();

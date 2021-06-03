@@ -69,7 +69,11 @@ body{
     list-style: none;
     color: #fff;
 }
-
+.resultsize{
+    background-color:pink;
+    text-align: center;
+    //display:none;
+}
 .sidebar ul li a{
     color: #fff;
 
