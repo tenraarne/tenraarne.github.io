@@ -353,7 +353,7 @@
     var macy = Macy({
             container: '#macy',
             trueOrder: false,
-            waitForImages: false,
+            waitForImages: true,
             margin: 10,
             columns: 6,
             breakAt: {
@@ -367,10 +367,10 @@
     }
 });
     macy.runOnImageLoad(function () {
-            //var show= document.getElementById("macy")
-            //show.classList.add("show");
-          macy.recalculate(true);
-        },true);
+            var show= document.getElementById("macy")
+            show.classList.add("show");
+          macy.recalculate(true, true);
+        });
 </script>
 
 </body>
