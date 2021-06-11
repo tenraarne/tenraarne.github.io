@@ -349,13 +349,37 @@
 
 </div>
 <script src="https://cdn.jsdelivr.net/npm/macy@2"></script>
-    <script src="./js/js.js"></script>
+
+<script>
+        const navSlide = () => {
+            const menu = document.querySelector('.menu');
+            const mobile_navbar_div = document.querySelector('.mobile_navbar_div');
+            const mobile_navbar  = document.querySelector('.mobile_navbar');
+            menu.addEventListener('click',()=>{
+               mobile_navbar_div.classList.toggle('mobile_navbar_active');
+               mobile_navbar.classList.toggle('mobile_navbar_items_active');
+    });
+}
+navSlide();
+
+    </script>
+<script>
+    function displaySize(){
+    var res = window.innerWidth + "x" + window.innerHeight;
+    document.getElementById("result").innerHTML = res;
+
+}
+
+
+displaySize();
+</script>
+
 <script>
     var macy = Macy({
             container: '#macy',
             trueOrder: false,
             waitForImages: true,
-            margin: 10,
+            margin: 20,
             columns: 6,
             breakAt: {
                 6144:12,
